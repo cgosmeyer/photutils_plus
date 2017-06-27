@@ -3,7 +3,7 @@ Extended functionality on the `astropy`-associated `photutils` photometry packag
 
 ## Set Up
 
-Clone the repo and run the setup.py.  You will need `astropy` and `photutils` installed.  
+Clone the repo and run the setup.py.  This will also install `astropy` and `photutils` if you don't have them already in your environment. 
 
 ```
 >>> python setup.py develop
