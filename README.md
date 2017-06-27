@@ -50,7 +50,7 @@ Include in your photometry script to plot the coordinates found with `sourcefind
 ### sourcefind
 Wraps `photutils.daofind` and more limitedly, `photutils.find_peaks`.  At this time, it cannot be run from the command-line (which would be easy to include if the developer took the initiative!).  
 
-`sourcefind.daofind` outputs coordinate files with selected parameters saved in the header of the file, similar to IRAF's `DAOFIND` task, but with easier to parse formatting. The default naming scheme is like IRAF's: `.coo`.  
+`sourcefind.daofind` outputs coordinate files with with a default naming scheme is like IRAF's: the image name appended with `.coo`.  
 
 ## A Scripted Workflow
 
@@ -89,8 +89,44 @@ The output photometry file will be named, by default, as "icqu04rgq_flc.fits.mag
 
 ## Example Output Photometry File
 
-Here is an example of a `.mag` file from `apphot`.  
+Here is an example of a `.mag` file from `apphot`, where "sep_out=False", so that all the aperture radii are printed in the same file for each source (3 shown in the example below). The header lists all the parameter settings; see the  `apphot` doc strings for more information on available parameters. 
 
 ```
-
+# PYTHON                 2.7.5           version
+# USER                   cgosmeyer               name
+# HOST                   cgosmeyermac             computer
+# DATE                   2016-08-13              yyyy-mm-dd
+# TIME                   12:43:36                hh:mm:ss
+# FUNCTION               apphot                  name
+#
+# ANNULUS                3.5             0
+# AP_RADII               [3, 5, 10]            1
+# BACKGLOBAL             False           2
+# BACKMETHOD             mean            3
+# COLNAMES               ['extr_xpix', 'extr_ypix']              4
+# COOFILE                icqu04rgq_flc.coo                  5
+# DANNULUS               10.0            6
+# EFFECTIVE_GAIN                 None            7
+# EXT            1               8
+# IMAGENAME              numpy array             9
+# MASK           None            10
+# METHOD                 subpixel                11
+# OUTNAME                icqu04rgq_flc           12
+# PIXELWISE_ERROR                None            13
+# SEP_OUT                False           14
+# SUBPIXELS              5               15
+# VERBOSE                False           16
+#
+ID      radius  aperture_sum    xcenter ycenter mean_local_bkgrd        tot_local_bkgrd   
+1       3.0     304.709299699   177.559345818   2038.99871288   5.34541805349   151.138134785   
+1       5.0     441.448582702   177.559345818   2038.99871288   2.35808650071   185.203680679    
+1       10.0    823.806982231   177.559345818   2038.99871288   6.91177559481   2171.39834319   
+2       3.0     253.913460445   213.889087553   2041.26538736   5.64445712521   159.593265342   
+2       5.0     327.771958152   213.889087553   2041.26538736   12.0727819215   948.194074825    
+2       10.0    11394.4246024   213.889087553   2041.26538736   2.13410972259   670.450342644   
+3       3.0     619.62800065    28.2171662015   1995.3848863    5.61276484794   158.697187314   
+3       5.0     795.264226607   28.2171662015   1995.3848863    3.13170050909   245.963182815    
+3       10.0    1877.91108042   28.2171662015   1995.3848863    2.74348838443   861.892295375
+...
 ```
+
