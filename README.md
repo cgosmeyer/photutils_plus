@@ -89,7 +89,7 @@ The output photometry file will be named, by default, as "icqu04rgq_flc.fits.mag
 
 ## Example Output Photometry File
 
-Here is an example of a `.mag` file from `apphot`, where "sep_out=False", so that all the aperture radii are printed in the same file for each source (3 shown in the example below). The header lists all the parameter settings; see the  `apphot` doc strings for more information on available parameters. Tools are available in the `phot_tools` module for writing and parsing these files. 
+Here is an example of a `.mag` file from `apphot`, where "sep_out=False", so that all the aperture radii are printed in the same file for each source (3 shown in the example below). The header lists all the parameter settings; see the  `apphot` doc strings for more information on available parameters. Tools are available in the `phot_tools` module for writing and parsing these files. For instance, the header can be read into a dictionary. 
 
 ```
 # PYTHON                 2.7.5           version
